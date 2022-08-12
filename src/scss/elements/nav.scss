@@ -1,0 +1,71 @@
+$nav-height: 150px;
+
+.nav {
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background-size: cover;
+    background-position: center;
+    content: "";
+    height: $nav-height;
+    background-color: #33333350;
+    z-index: -1;
+  }
+}
+
+.nav__wrapper {
+  @include wrapper;
+  height: $nav-height;
+}
+
+
+.nav__logo-container {
+    display: block;
+    width: 274px;
+
+  &::after {
+    display: block;
+    position: relative;
+    top: -66px;
+    left: 0;
+    content: "";
+    height: $nav-height;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("../images/corners-logo.png");
+  }
+}
+
+.nav__container {
+  display: flex;
+  gap: 20px;
+  padding-top: 30px;
+}
+
+.nav__list {
+  display: flex;
+  color: #ffffff;
+  list-style: none;
+  width: 100%;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.nav__item {
+    font-family: 'Roboto',Arial, sans-serif;;
+    font-weight: 400;
+    font-size: 18px;
+  cursor: pointer;
+}
+
+.nav__link {
+  color: #ffffff;
+  text-decoration: none;
+}
