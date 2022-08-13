@@ -4,13 +4,17 @@
   
 
 
-  @media (max-width: 768px) {
+  @media (max-width: $tablet) {
   }
 
-  @media (max-width: 1280px) {
+  @media (max-width: $descktop) {
   }
 
-  @media (max-width: 1523px) {
+  @media (max-width: $descktop-big) {
     background: top/cover no-repeat  url("../images/tablet-background.png");
   }
+}
+
+.body__wrapper {
+  height: 100%;
 }
