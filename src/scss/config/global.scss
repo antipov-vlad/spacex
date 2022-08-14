@@ -11,6 +11,6 @@ html {
 body {
   height: 100%;
   width: auto;
- 
+  overflow-y: hidden;
   background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(20, 3, 85));
 }

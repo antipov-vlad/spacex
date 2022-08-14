@@ -1,121 +1,115 @@
 @mixin icon($height, $width) {
-	transition-duration: 0.5s;
-	position: relative;
-	display: block;
-	height: $height;
-	width: $width;
-	top: 30px;
-	background-color: #fcfcfc;
+  transition-duration: 0.5s;
+  position: relative;
+  display: block;
+  height: $height;
+  width: $width;
+  top: 30px;
+  background-color: #fcfcfc;
 }
 
 @mixin icon-before($height, $width, $top) {
-	transition-duration: 0.5s;
-	position: absolute;
-	width: $width;
-	height: $height;
-	background-color: #ffffff;
-	content: '';
-	top: $top;
+  transition-duration: 0.5s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: #ffffff;
+  content: "";
+  top: $top;
 }
 
 @mixin icon-after($height, $width, $top) {
-	transition-duration: 0.5s;
-	position: relative;
-	display: block;
-	width: $width;
-	height: $height;
-	background-color: #ffffff;
-	content: '';
-	top: $top;
+  transition-duration: 0.5s;
+  position: relative;
+  display: block;
+  width: $width;
+  height: $height;
+  background-color: #ffffff;
+  content: "";
+  top: $top;
 }
 
 .hamburger {
-    position: relative;
- width: 39px;
- height: 39px;
- background-color: #ffffff00;
- border-radius: 50%;
- cursor: pointer;
- visibility: hidden;
- scale: 2;
- z-index: 2;
+  position: relative;
+  width: 39px;
+  height: 39px;
+  background-color: #ffffff00;
+  border-radius: 50%;
+  cursor: pointer;
+  scale: 2;
+  z-index: 2;
+  min-width: 30px;
 
- @media (max-width: $tablet) {
-visibility: visible;
-min-width: 30px;
-}
+  @media (min-width: $tablet) {
+    visibility: hidden;
+  }
 }
 
 .hamburger-contain {
-	position: relative;
-	width: 18px;
-	height: 18px;
-	transition-duration: 0.5s;
-	left: 50%;
-	transform: translate(-50%, -60%);
-    
+  position: relative;
+  width: 18px;
+  height: 18px;
+  transition-duration: 0.5s;
+  left: 50%;
+  transform: translate(-50%, -60%);
 
-	.hamburger-E {
-		@include icon(1.5px, 18px);
-		transition-delay: 0.5s;
-		border-radius: 20%;
+  .hamburger-E {
+    @include icon(1.5px, 18px);
+    transition-delay: 0.5s;
+    border-radius: 20%;
 
-		&:before {
-			@include icon-before(1.5px, 18px, -5px);
-			border-radius: 20%;
-		}
+    &:before {
+      @include icon-before(1.5px, 18px, -5px);
+      border-radius: 20%;
+    }
 
-		&:after {
-			@include icon-after(1.5px, 18px, 5px);
-			border-radius: 20%;
-		}
-	}
+    &:after {
+      @include icon-after(1.5px, 18px, 5px);
+      border-radius: 20%;
+    }
+  }
 
-	.hamburger-X {
-		@include icon(0, 20px);
-		transform: scaleX(0);
-		transform-origin: 10px 0px;
+  .hamburger-X {
+    @include icon(0, 20px);
+    transform: scaleX(0);
+    transform-origin: 10px 0px;
 
-		&:before {
-			@include icon-before(2px, 18px, -50%);
-			transform: rotateZ(45deg) scaleX(1.25) translate(-1.5px, -1.5px);
-		}
+    &:before {
+      @include icon-before(2px, 18px, -50%);
+      transform: rotateZ(45deg) scaleX(1.25) translate(-1.5px, -1.5px);
+    }
 
-		&:after {
-			@include icon-after(2px, 18px, 50%);
-			transform: rotateZ(-45deg) scaleX(1.25) translate(1.5px, -1.5px);
-		}
+    &:after {
+      @include icon-after(2px, 18px, 50%);
+      transform: rotateZ(-45deg) scaleX(1.25) translate(1.5px, -1.5px);
+    }
 
-		&:hover {
-			cursor: pointer;
-		}
-	}
+    &:hover {
+      cursor: pointer;
+    }
+  }
 
-	&.open {
-		.hamburger-E {
-			transition-duration: 0.5s;
-			transform: scaleX(0);
-			transition-delay: 0s;
-		}
+  &.open {
+    .hamburger-E {
+      transition-duration: 0.5s;
+      transform: scaleX(0);
+      transition-delay: 0s;
+    }
 
-		.hamburger-X {
-			transition: 0.5s;
-			transition-delay: 0.5s;
-			transform: scaleX(1);
-		}
-	}
+    .hamburger-X {
+      transition: 0.5s;
+      transition-delay: 0.5s;
+      transform: scaleX(1);
+    }
+  }
 
-	&:hover {
-		cursor: pointer;
-	}
+  &:hover {
+    cursor: pointer;
+  }
 }
-
-
-
 
 @media (max-width: $descktop) {
 }
 
 @media (max-width: $descktop-big) {
-  
 }

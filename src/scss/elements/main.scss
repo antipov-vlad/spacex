@@ -4,38 +4,46 @@
 
 .main__wrapper {
   @include wrapper;
-  box-sizing: border-box;
 
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  justify-content: center;
-  height: 100%;
+  flex-direction: column;
 
-  @media (max-width: $tablet) {
-    flex-direction: column;
-    padding-top: 50px;
+  @media (min-width: $descktop) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
   }
-}
-
-.main__button {
 }
 
 .main__title {
   font-family: "Roboto-Bold", Arial, sans-serif;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 3.8vh;
   color: #ffffff;
   background-color: #2aa5a0;
   background-image: linear-gradient(90deg, #fafafa, #ff5e00, #ff1100);
   flex: 1;
+  max-width: 80%;
   text-align: center;
   box-sizing: border-box;
+  margin-bottom: 5vh;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-top: 50px;
+  cursor: default;
 
-  @media (max-width: $tablet) {
-    margin-bottom: 4vh;
-    font-size: 10vw;
+  @media (min-width: $tablet) {
+    margin-bottom: 15vh;
+  }
+
+  @media (min-width: $descktop) {
+    grid-column: 1/-1;
+    font-size: 5vh;
+  }
+  @media (min-width: $descktop-big) {
+    visibility: hidden;
   }
 }
 
@@ -49,10 +57,13 @@
 
   align-self: center;
 
-  @media (max-width: $tablet) {
+  @media (min-width: $tablet) {
   }
 
-  @media (max-width: $descktop) {
+  @media (min-width: $descktop) {
+    grid-column: 3/4;
+    align-self: flex-end;
+    margin-right: 5%;
   }
 }
 
@@ -63,7 +74,7 @@
   text-align: center;
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 400;
-  font-size: 4vw;
+  font-size: 1.5vh;
   height: max-content;
   opacity: 0.8;
   transition: 0.5s;
@@ -74,6 +85,10 @@
     transition: 0.5s ease;
     scale: 1.1;
   }
+
+  @media (min-width: $descktop) {
+    font-size: 2vh;
+  }
 }
 
 .main__item-content {
@@ -82,52 +97,99 @@
   font-size: 4em;
   position: relative;
   z-index: -1;
+  cursor: default;
 }
 
 .main__button {
   align-self: flex-end;
-  @media (max-width: $tablet) {
-    display: block;
-    position: absolute;
-    bottom: 20px;
-    height: 40px;
-    font-family: "Roboto", Arial, sans-serif;
-    font-weight: 400;
-    font-size: 1.1em;
-    background-size: 100%;
-    width: 200px;
-    padding: 5px 5px;
-    order: 3;
-    align-self: center;
-    border: none;
-    color: #ffffff;
-    background: url(../images/corner-top-right-border.png) top -18px right -11px/46px
-        no-repeat,
-      url(../images/corner-button-left-border.png) bottom -18px left -11px/46px
-        no-repeat,
-      url(../images/border-buttompng.png) center no-repeat;
-    background-clip: border-box;
-   
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.1em;
+  height: min-content;
 
+  width: max-content;
+  order: 3;
+  align-self: center;
+  border: none;
+  color: #ffffff;
+  background: linear-gradient(rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)) 50% 50% /
+      calc(100% - 6px) calc(100% - 6px) no-repeat,
+    linear-gradient(
+      222deg,
+      #65a4f2 0%,
+      rgba(101, 164, 242, 0) 31%,
+      rgba(13, 31, 45, 0) 53%,
+      rgba(84, 157, 247, 0) 70%,
+      rgba(16, 25, 37, 0) 71%,
+      #549df7 100%
+    );
+  border-radius: 0px;
+  padding: 17px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+    transition: 0.5s;
   }
-  // &:hover {
-  //   opacity: 0.8;
-   
-    &::before {
-      display: flex;
-      flex-direction: column;
-      flex:1;
-      position: absolute;
-      z-index: 1;
-      top: -150px;
-      max-height: 100px;
-      left: 50%;
-      content: "";
-      width: 5px;
-      background-image: linear-gradient(180deg, #000000, #00000086, #fdf5f400);
-      height: 10vh;
-      
-      transition: 5s;
-    // }
+
+  @media (min-width: $descktop) {
+    grid-row: 2/3;
+    position: relative;
+    bottom: 0;
+  }
+  @media (min-width: $descktop-big) {
+    transform: translate(0, 15vh);
+  }
+}
+
+.main__pointer {
+  visibility: hidden;
+  @media (min-width: $descktop) {
+    position: relative;
+    transform: translate(-50%, -60px);
+    width: 50%;
+    height: 20vh;
+    background-color: #ffffff;
+    height: 2px;
+    order: 2;
+    grid-column: 2/3;
+    opacity: 0.3;
+    visibility: visible;
+    transition: 2s;
+  }
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #000000;
+    border: 1px solid #ffffff;
+  }
+
+  &::before {
+    display: block;
+    content: "";
+    position: absolute;
+    transform: translate(-116px, -24px) rotate(23deg);
+    width: 121px;
+    height: 2px;
+    background-image: linear-gradient(90deg, #00000041, #ffffff69, #ffffff);
+  }
+
+  .main__button:hover + & {
+    opacity: 1;
+    transition: 2s;
+  }
+
+  @media (min-width: $descktop-big) {
+    transform: translate(-50%, 4vh);
   }
 }

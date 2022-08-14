@@ -1,0 +1,27 @@
+<svg width="580" height="400" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with SVG Editor - http://github.com/mzalive/SVG Editor/ -->
+ <defs>
+  <linearGradient y2="0" x2="0" y1="0" x1="1" id="svg_16">
+   <stop offset="0.808594" stop-color="#ffffff"/>
+   <stop offset="0.980469" stop-color="#000000"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_17">
+   <g fill-opacity="0.7" transform="rotate(1 238.14767456054557,183.44122314453182) " stroke="null" id="svg_6">
+    <g id="svg_4" fill="#000000" transform="matrix(0.05779242946151097,0,0,-0.055465744760232485,-5603.029486417887,-3485.2388607927023) ">
+     <path fill="url(#svg_16)" stroke="null" id="svg_5" d="m98518.559163,-65687.164398c2,-5 252,-205 556,-445l554,-437l1866,16c1026,8 1890,15 1919,15c39,0 53,-4 53,-14c0,-22 49,-56 82,-56c64,0 102,86 58,130c-41,41 -113,32 -135,-18c-8,-19 -17,-22 -65,-22c-30,0 -891,-7 -1913,-15l-1858,-16l-202,160c-111,87 -359,283 -552,435c-192,152 -354,276 -358,276c-5,0 -7,-4 -5,-9zm5058,-816c26,-32 -13,-81 -47,-59c-35,22 -23,74 17,74c10,0 23,-7 30,-15z"/>
+    </g>
+   </g>
+   <ellipse stroke="#0f0f00" ry="1.938772" rx="2.040842" id="svg_12" cy="207.244913" cx="380.816313" stroke-width="0" fill="#000000"/>
+  </g>
+ </g>
+</svg>
